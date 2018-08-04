@@ -14,11 +14,11 @@ export default class Dashboard extends Component {
     };
   }
 
-  componentDidMount() {
-    let stateFromStorage = JSON.parse(localStorage.state);
-    this.setState({...stateFromStorage});
-  }
-  
+  // componentDidMount() {
+  //   let stateFromStorage = JSON.parse(localStorage.state);
+  //   this.setState({...stateFromStorage});
+  // }
+
   handleChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -43,7 +43,8 @@ export default class Dashboard extends Component {
         title: '',
         notes: [...prevState.notes, newNote],
       };
-    }, () => localStorage.state = JSON.stringify(this.state)
+    }, 
+    // () => localStorage.state = JSON.stringify(this.state)
     );
   }
 
@@ -59,7 +60,8 @@ export default class Dashboard extends Component {
 
     this.setState({
       notes: arr,
-    }, () => localStorage.state= JSON.stringify(this.state)
+    }, 
+    // () => localStorage.state= JSON.stringify(this.state)
     );
   };
 
