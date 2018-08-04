@@ -18,6 +18,7 @@ export default class Dashboard extends Component {
     let stateFromStorage = JSON.parse(localStorage.state);
     this.setState({...stateFromStorage});
   }
+  
   handleChange = (e) => {
     e.preventDefault();
     this.setState({
