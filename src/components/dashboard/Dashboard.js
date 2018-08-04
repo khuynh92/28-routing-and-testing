@@ -14,6 +14,10 @@ export default class Dashboard extends Component {
     };
   }
 
+  componentDidMount() {
+    let stateFromStorage = JSON.parse(localStorage.state);
+    this.setState({...stateFromStorage});
+  }
   handleChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -38,23 +42,24 @@ export default class Dashboard extends Component {
         title: '',
         notes: [...prevState.notes, newNote],
       };
-    });
+    }, () => localStorage.state = JSON.stringify(this.state)
+    );
   }
 
   removeNote = (note) => {
 
     let arr = [...this.state.notes];
 
-    for(let i = 0; i < arr.length; i++) {
-      if(arr[i].id === note.id) {
-        arr.splice(i,1);
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].id === note.id) {
+        arr.splice(i, 1);
       }
     }
 
     this.setState({
       notes: arr,
-    });
-
+    }, () => localStorage.state= JSON.stringify(this.state)
+    );
   };
 
   render() {

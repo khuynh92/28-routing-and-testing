@@ -1,4 +1,4 @@
-# LAB 26   - Frontend Tooling & React
+# LAB 28   - Routing and Testing
 
 This project is a basic introduction into react. 
 
