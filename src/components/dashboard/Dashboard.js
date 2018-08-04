@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
 import NoteCreateForm from '../note-create-form/NoteCreateForm.js';
+import NoteList from '../note-list/NoteList.js';
 import uuid from 'uuid/v4';
 
 export default class Dashboard extends Component {
@@ -8,42 +9,59 @@ export default class Dashboard extends Component {
     super(props);
     this.state = {
       content: '',
-      newNote: {},
+      title: '',
       notes: [],
     };
   }
 
   handleChange = (e) => {
     e.preventDefault();
-    let id = uuid();
-    let content = e.target.value;
     this.setState({
-      content: content,
-      newNote:{
-        id,
-        content,
-        editing: false,
-        completed: false,
-
-      },
+      [e.target.id]: e.target.value,
     });
   }
 
   addNote = (e) => {
     e.preventDefault();
-    console.log('pre', this.state);
+
+    let newNote = {
+      id: uuid(),
+      title: this.state.title,
+      content: this.state.content,
+      editing: false,
+      completed: false,
+    };
+
     this.setState((prevState) => {
       return {
-        contentmin: '',
-        notes: [...prevState.notes, this.state.newNote]
+        content: '',
+        title: '',
+        notes: [...prevState.notes, newNote],
       };
-    }, () => console.log('post', this.state));
+    });
   }
+
+  removeNote = (note) => {
+
+    let arr = [...this.state.notes];
+
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i].id === note.id) {
+        arr.splice(i,1);
+      }
+    }
+
+    this.setState({
+      notes: arr,
+    });
+
+  };
 
   render() {
     return (
       <Fragment>
-        <NoteCreateForm text={this.state.content} handleSubmit={this.addNote} handleChange={this.handleChange}/>
+        <NoteCreateForm title={this.state.title} content={this.state.content} handleSubmit={this.addNote} handleChange={this.handleChange} />
+        <NoteList removeNote={this.removeNote} notes={this.state.notes} />
       </Fragment>
 
     );

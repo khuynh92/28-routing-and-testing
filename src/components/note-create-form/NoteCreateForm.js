@@ -5,9 +5,18 @@ export default class NoteCreateForm extends Component {
     return (
       <form onSubmit={this.props.handleSubmit}>
         <label>
-          <input value={this.props.text} onChange={this.props.handleChange} id='note' type="text"/>
-          <input type="submit"/>
+          Title:
+          <br />
+          <input value={this.props.title} onChange={this.props.handleChange} id='title' type="text" />
         </label>
+        <br />
+        <label>
+          Notes:
+          <br />
+          <input value={this.props.content} onChange={this.props.handleChange} id='content' type="text" />
+        </label>
+        <input type="submit" />
+
       </form>
     );
   }
