@@ -1,0 +1,33 @@
+#note-list li h4 {
+  display: inline;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+button:focus {
+  outline:0;
+}
+
+
+#note-list li button {
+  cursor: pointer;
+  margin-left: 1%;
+  display: inline;
+  background-color: rgb(238, 209, 209);
+  border: none;
+  border-radius: 5px;
+  transition: 300ms;
+}
+
+#note-list li button:hover {
+  background-color: rgb(229, 137, 137);
+}
+
+#note-list li button:active {
+  background-color: rgb(218, 87, 87);
+}
+
+#note-list li p {
+  margin: 0%;
+}
