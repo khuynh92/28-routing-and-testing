@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
   }
 
   componentDidMount() {
-    if (localStorage.state) {
+    if (localStorage && localStorage.state) {
       let stateFromStorage = JSON.parse(localStorage.state);
       this.setState({ ...stateFromStorage });
     }
