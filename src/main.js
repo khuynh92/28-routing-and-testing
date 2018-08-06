@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './components/app/App.js';
 
+import './style/main.scss';
+
 class Main extends Component {
 
   render() {
