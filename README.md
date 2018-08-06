@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.com/khuynh92/28-routing-and-testing.svg?branch=master)](https://travis-ci.com/khuynh92/28-routing-and-testing)
 
+Heroku: https://khoa-28-routing-and-testing.herokuapp.com/
+Travis: https://travis-ci.com/khuynh92/28-routing-and-testing.svg?branch=master
+
 # LAB 28  - Routing and Testing
 
 This project is a basic Note taking app that will create and display notes. 
