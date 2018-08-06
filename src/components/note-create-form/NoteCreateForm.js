@@ -7,14 +7,15 @@ export default class NoteCreateForm extends Component {
         <label>
           Title:
           <br />
-          <input value={this.props.title} onChange={this.props.handleChange} id='title' type="text" />
+          <input required value={this.props.title} onChange={this.props.handleChange} id='title' type="text" />
         </label>
         <br />
         <label>
           Notes:
           <br />
-          <input value={this.props.content} onChange={this.props.handleChange} id='content' type="text" />
+          <textarea required value={this.props.content} onChange={this.props.handleChange} id='content' />
         </label>
+        <br />
         <input type="submit" />
 
       </form>

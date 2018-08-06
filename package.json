@@ -2,11 +2,13 @@
   "name": "28-routing-and-testing",
   "version": "1.0.0",
   "description": "This project is a basic introduction into react.",
-  "main": "webpack.common.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "watch": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "start": "node ./src/server.js",
+    "postinstall": "npm run build"
   },
   "jest": {
     "transformIgnorePatterns": [
